@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable</title>
+</head>
+<body>
+    <style>
+        table{
+            height:400px;
+            width:800px;
+        }
+        td:hover{
+            background-color:rgb(8, 141, 8);
+            cursor:pointer;
+        }
+    </style>
+    <table border="1" cellspacing="1" height="100%" width="50%" align="center">
+        <tr>
+            <th colspan="6">TimeTable</th>
+        </tr>
+        <tr>
+            <th rowspan="7">Hours</th>
+        </tr>
+        <tr>
+            <td><strong>Monday</strong></td>
+            <td><strong>Tuesday</strong></td>
+            <td><strong>Wednesday</strong></td>
+            <td><strong>Thursday</strong></td>
+            <td><strong>Friday</strong></td>
+        </tr>
+        <tr>
+            <td onclick="openTeacherDetails('Sonal Singh','sonal.singh@school.edu','8890456786')">science</td>
+            <td onclick="openTeacherDetails('Anjali Sharma','anjalisharma@school.edu','9867546789')">maths</td>
+            <td onclick="openTeacherDetails('Sonal Singh','sonal.singh@school.edu','8890456786')">science</td>
+            <td onclick="openTeacherDetails('Anjali Sharma','anjalisharma@school.edu','9867546789')">maths</td>
+            <td onclick="openTeacherDetails('Ram Manohar','rammanohar@school.edu','9867546789')">arts</td>
+        </tr>
+        <tr>
+            <td onclick="openTeacherDetails('Trisha Sharma','trishasharma@school.edu','9867567589')">social</td>
+            <td onclick="openTeacherDetails('Garvit Singh','garvitsingh@school.edu','8878905650')">hindi</td>
+            <td onclick="openTeacherDetails('Kasturi Gaur','kasturigaur@school.edu','9878905650')">english</td>
+            <td onclick="openTeacherDetails('Trisha Sharma','trishasharma@school.edu','9867567589')">social</td>
+            <td onclick="openTeacherDetails('SK Rathore','skrathore@school.edu','6789405650')">sports</td>
+        </tr>
+        <tr>
+            <th colspan="5" align="center">Lunch</th>
+        </tr>
+        <tr>
+            <td onclick="openTeacherDetails('Sonal Singh','sonal.singh@school.edu','8890456786')">science</td>
+            <td onclick="openTeacherDetails('Anjali Sharma','anjalisharma@school.edu','9867546789')">maths</td>
+            <td onclick="openTeacherDetails('Sonal Singh','sonal.singh@school.edu','8890456786')">science</td>
+            <td onclick="openTeacherDetails('Anjali Sharma','anjalisharma@school.edu','9867546789')">maths</td>
+            <th rowspan="2">project</th>
+        </tr>
+        <tr>
+            <td onclick="openTeacherDetails('Trisha Sharma','trishasharma@school.edu','9867567589')">social</td>
+            <td onclick="openTeacherDetails('Garvit Singh','garvitsingh@school.edu','8878905650')">hindi</td>
+            <td onclick="openTeacherDetails('Kasturi Gaur','kasturigaur@school.edu','9878905650')">english</td>
+            <td onclick="openTeacherDetails('Trisha Sharma','trishasharma@school.edu','9867567589')">social</td>
+        </tr>
+
+        </table>
+        <script>
+            function openTeacherDetails(teacher,email,call){
+                const newWindow=window.open("Teacher's Detail","target:_blank",width=100,height=100);
+                newWindow.document.write(`
+                <html>
+                    <head>
+                        <title>Teacher's Details</title>
+                    </head>
+                    <body>
+                        <h3></strong>Teacher:${teacher}</strong></h1>
+                        <h5><a href="mailto:${email}">${email}</a></h5>
+                        <h5><a href="tel:9345467890">call us:${call}</a></h2>
+                    </body>
+                </html>
+                `);
+                newWindow.document.close();
+            }
+        </script>
+    
+</body>
+</html>
